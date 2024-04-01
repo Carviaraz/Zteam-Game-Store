@@ -1,0 +1,179 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Game>
+
+<style>
+    .custom-carousel-container {
+        margin-left: 20px; /* Adjust as needed */
+        margin-right: 20px; /* Adjust as needed */
+    }
+
+    .custom-button {
+        background-color: #808080; /* Replace with your desired color */
+        border-color: #808080; /* Replace with your desired color */
+    }
+
+    .scrollable-cards-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 20px; /* Add some bottom padding to avoid horizontal scrollbar being cut off */
+    }
+
+    .scrollable-card {
+        display: inline-block;
+        width: 200px; /* Adjust card width as needed */
+        margin-right: 10px; /* Adjust card margin as needed */
+    }
+</style>
+
+
+@* slide img *@
+<div class="home-page-content">
+    <div class="d-flex justify-content-end mt-5">
+        <a class="nav-link active" href="/Cart/index">
+            <button class="btn btn-info"> <i class="bi bi-cart-plus"></i> </button>
+        </a>
+    </div>
+
+    <form class="d-flex mt-2" action="@Url.Action("Search", "Library")" method="post">
+        <input class="form-control me-sm-2" type="search" name="query" placeholder="ค้นหา">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <div class="container custom-carousel-container my-5">
+        <h2 class="home-page-content-title mt-3">โดดเด่นและแนะนำ</h2>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active btn btn-primary" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="btn btn-primary" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="btn btn-primary" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/300/125" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/300/125" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/300/125" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev custom-button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next custom-button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>เกมขายดี</h2>
+    <div class="scrollable-cards-container">
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game1.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 1 })">Elden Ring</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game2.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 2 })">Deadby Daylight</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game3.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 1 })">Elden Ring</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game4.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 2 })">Deadby Daylight</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game5.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 1 })">Elden Ring</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game6.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 2 })">Deadby Daylight</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game7.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 1 })">Elden Ring</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game8.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 2 })">Deadby Daylight</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game9.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 1 })">Elden Ring</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+        <div class="scrollable-card">
+            <div class="card">
+                <img src="~/assests/gameimage/cover/game10.jpg" class="card-img-top" alt="Card Image">
+                <div class="card-body">
+                    <!-- Make the game name a link -->
+                    <h5 class="card-title"><a href="@Url.Action("GameDetail", "Library", new { id = 2 })">Deadby Daylight</a></h5>
+                    <p class="game-price">$49.99</p> <!-- Display game price -->
+                </div>
+            </div>
+        </div>
+    </div>
